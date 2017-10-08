@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\FarmFertilizer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -36,6 +37,34 @@ class FertilizerController extends Controller
     /**
      * Creates a new Fertilizer entity.
      *
+     * @Route("/new_from_index", name="fertilizer_new_from_index")
+     * @Method({"GET", "POST"})
+     */
+    public function newFromIndexAction(Request $request)
+    {
+        $fertilizer = new Fertilizer();
+        $form = $this->createForm('AppBundle\Form\FertilizerType', $fertilizer);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($fertilizer);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('success', 'L\'engrais ou amendement '.$fertilizer->getName().' a été ajouté avec succès ! Vous pouvez désormais l\'ajouter dans votre stock d\'engrais.');
+
+            return $this->redirectToRoute('fertilizer_index');
+        }
+
+        return $this->render('fertilizer/new.html.twig', array(
+            'fertilizer' => $fertilizer,
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * Creates a new Fertilizer entity.
+     *
      * @Route("/new", name="fertilizer_new")
      * @Method({"GET", "POST"})
      */
@@ -50,9 +79,19 @@ class FertilizerController extends Controller
             $em->persist($fertilizer);
             $em->flush();
 
+            // Add a farmSpeciality automatically
+            $farm = $this->getUser()->getFarm();
+            if(is_object($farm)){
+                $farmFertilizer = new FarmFertilizer();
+                $farmFertilizer->setFarm($farm);
+                $farmFertilizer->setFertilizer($fertilizer);
+                $em->persist($farmFertilizer);
+                $em->flush();
+            };
+
             $request->getSession()->getFlashBag()->add('success', 'L\'engrais ou amendement '.$fertilizer->getName().' a été ajouté avec succès ! Vous pouvez désormais l\'ajouter dans votre stock d\'engrais.');
 
-            return $this->redirectToRoute('fertilizer_index');
+            return $this->redirectToRoute('farmfertilizer_index');
         }
 
         return $this->render('fertilizer/new.html.twig', array(

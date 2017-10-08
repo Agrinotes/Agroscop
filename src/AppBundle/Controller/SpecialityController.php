@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\FarmSpeciality;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -38,6 +39,32 @@ class SpecialityController extends Controller
     /**
      * Creates a new Speciality entity.
      *
+     * @Route("/new_from_index", name="speciality_new_from_index")
+     * @Method({"GET", "POST"})
+     */
+    public function newFromIndexAction(Request $request)
+    {
+        $speciality = new Speciality();
+        $form = $this->createForm('AppBundle\Form\SpecialityType', $speciality);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($speciality);
+            $em->flush();
+
+            return $this->redirectToRoute('speciality_index');
+        }
+
+        return $this->render('speciality/new_from_index.html.twig', array(
+            'speciality' => $speciality,
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * Creates a new Speciality entity.
+     *
      * @Route("/new", name="speciality_new")
      * @Method({"GET", "POST"})
      */
@@ -52,7 +79,17 @@ class SpecialityController extends Controller
             $em->persist($speciality);
             $em->flush();
 
-            return $this->redirectToRoute('speciality_show', array('id' => $speciality->getId()));
+            // Add a farmSpeciality automatically
+            $farm = $this->getUser()->getFarm();
+            if(is_object($farm)){
+                $farmSpeciality = new FarmSpeciality();
+                $farmSpeciality->setFarm($farm);
+                $farmSpeciality->setSpeciality($speciality);
+                $em->persist($farmSpeciality);
+                $em->flush();
+            };
+
+            return $this->redirectToRoute('farmspeciality_index');
         }
 
         return $this->render('speciality/new.html.twig', array(

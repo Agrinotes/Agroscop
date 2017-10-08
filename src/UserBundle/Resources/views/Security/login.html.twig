@@ -1,159 +1,104 @@
 <!DOCTYPE html>
-<html class="no-js css-menubar" lang="en">
+<html lang="en">
+
 <head>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-  <meta name="description" content="bootstrap admin template">
-  <meta name="author" content="">
-  <title>Agroscopik | Connexion</title>
-  <link rel="apple-touch-icon" href="{{ asset('ui/topbar/assets/images/apple-touch-icon.png') }}">
-  <link rel="shortcut icon" href="{{ asset('ui/topbar/assets/images/favicon.ico') }}">
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/css/bootstrap-extend.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/css/site.min.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <style>
-        .table a{
-            text-decoration: none;
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <style>
+    body {
+      margin: 5% 10% 5% 10%;
+      background-image: url({{asset('ui/home_background.jpg')}});
+      background-repeat: no-repeat;
+    	background-size: cover;
         }
 
-        .table td:hover a{
-            text-decoration: underline;
-        }
-        input:-webkit-autofill {
-            -webkit-box-shadow:0 0 0 50px white inset !important; /* Change the color to your own background color */
-            -webkit-text-fill-color: #333;
-        }
-        input:-webkit-autofill:focus {
-            -webkit-box-shadow: /*your box-shadow*/,0 0 0 50px white inset !important;
-            -webkit-text-fill-color: #333;
-        }
-    </style>
 
-  <!-- Plugins -->
-  <link rel="stylesheet" href="{{asset('ui/topbar/assets/vendor/animsition/animsition.min.css')}}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/vendor/asscrollable/asScrollable.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/vendor/switchery/switchery.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/vendor/intro-js/introjs.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/vendor/slidepanel/slidePanel.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/vendor/flag-icon-css/flag-icon.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/vendor/waves/waves.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/examples/css/pages/login-v2.css')}}">
-  <!-- Fonts -->
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/fonts/material-design/material-design.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('ui/topbar/assets/fonts/brand-icons/brand-icons.min.css') }}">
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="{{ asset('ui/topbar/assets/vendor/html5shiv/html5shiv.min.js') }}"></script>
-    <![endif]-->
-  <!--[if lt IE 10]>
-    <script src="{{ asset('ui/topbar/assets/vendor/media-match/media.match.min.js')}}"></script>
-    <script src="{{ asset('ui/topbar/assets/vendor/respond/respond.min.js') }}"></script>
-    <![endif]-->
-  <!-- Scripts -->
-  <script src="{{ asset('ui/topbar/assets/vendor/breakpoints/breakpoints.min.js') }}"></script>
-  <script>
-  Breakpoints();
-  </script>
-    <link id="skinStyle" href="{{ asset('ui/topbar/assets/skins/teal.css') }}" rel="stylesheet" type="text/css">
+            input:-webkit-autofill {
+                -webkit-box-shadow:0 0 0 50px white inset !important; /* Change the color to your own background color */
+                -webkit-text-fill-color: #333;
+            }
+            input:-webkit-autofill:focus {
+                -webkit-box-shadow: /*your box-shadow*/,0 0 0 50px white inset !important;
+                -webkit-text-fill-color: #333;
+            }
 
+  </style>
 </head>
-<body class="animsition page-login-v2 layout-full page-dark">
-  <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-  <!-- Page -->
-  <div class="page" data-animsition-in="fade-in" data-animsition-out="fade-out">
-    <div class="page-content">
-      <div class="page-brand-info">
-        <div class="brand">
-            <h2 class="font-size-80 white" style="font-family: 'Pacifico','Roboto', cursive ">agroscopik</h2>
-        </div>
-        <p class="font-size-20">Simplifie la vie des agriculteurs et des conseillers agricoles en Nouvelle-Calédonie.</p>
+
+<body>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-sm-6" style="text-align:center;color:white;">
+        <h1 class="display-4">Agroscopik</h1>
+        <p class="lead">
+          Facilite la vie des agriculteurs de Nouvelle-Calédonie</p>
       </div>
-      <div class="page-login-main">
-        <div class="brand hidden-md-up">
-            <h2 class="font-size-40" style="font-family: 'Pacifico','Roboto', cursive; text-align: center;">agroscopik</h2>
-        </div>
-        <h3 class="font-size-24">Connectez-vous</h3>
-        <!-- Login Form -->
-          {{ include('@User/Security/login_content.html.twig') }}
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-8 col-sm-12">
+        <div class="card">
+          <h5 class="card-header text-center">Connexion</h5>
+          <div class="card-body">
+            {% if error %}
+                    <div class="alert dark alert-alt alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+            {% endif %}
+            <form class="form col-md-12 center-block" action="{{ path("fos_user_security_check") }}" method="post">
+              <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
 
-        <p>
-            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-danger btn-block">
-                Créer un compte
-            </a>
-        </p>
-        <footer class="page-copyright">
-          <p>Agroscopik par Hugo Lehoux</p>
-          <p>© 2016 REPAIR. Tous droits réservés.</p>
-          <div class="social">
+              <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="E-mail" id="username" name="_username">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control input-lg" placeholder="Mot de passe" id="inputPassword" name="_password">
+                <p class="text-right"><a href="{{ path('fos_user_resetting_request') }}" class="small text-info">Mot de passe oublié ?</a></p>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" id="remember" name="_remember_me" required="true" checked>
+                  <span class="small">Rester connecté</a></span>
+                </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-info btn-block" type="submit"
+                        id="_submit" name="_submit">Se connecter
+                </button>
+                <a href="{{ path('fos_user_registration_register') }}" class="btn btn-outline-secondary btn-block" role="button">Créer un compte</a>
+              </div>
 
-            <a class="btn btn-icon btn-round social-facebook" href="https://www.facebook.com/agricultureresponsable">
-              <i class="icon bd-facebook" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-icon btn-round social-vimeo" href="https://vimeo.com/user51230604">
-              <i class="icon bd-vimeo" aria-hidden="true"></i>
-            </a>
-              <a class="btn btn-icon btn-round social-github" href="https://github.com/Agroscopik">
-                  <i class="icon bd-github" aria-hidden="true"></i>
-              </a>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <a href="{{ path('cgu') }}" class="small text-secondary">Conditions Générales d'Utilisation</a>
+
+  <br/>
+    <img src="{{asset('ui/logo_repair.jpg')}}" style="max-width:40%" alt="Logo REPAIR"><br/>
+
+  </div>
+</div>
+
+
+            </form>
           </div>
-        </footer>
+        </div>
       </div>
     </div>
   </div>
-  <!-- End Page -->
-  <!-- Core  -->
-  <script src="{{ asset('ui/topbar/assets/vendor/babel-external-helpers/babel-external-helpers.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/tether/tether.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/animsition/animsition.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/mousewheel/jquery.mousewheel.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/asscrollbar/jquery-asScrollbar.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/asscrollable/jquery-asScrollable.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/waves/waves.min.js') }}"></script>
-  <!-- Plugins -->
-  <script src="{{ asset('ui/topbar/assets/vendor/switchery/switchery.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/intro-js/intro.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/screenfull/screenfull.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/slidepanel/jquery-slidePanel.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/vendor/jquery-placeholder/jquery.placeholder.min.js') }}"></script>
-  <!-- Scripts -->
-  <script src="{{ asset('ui/topbar/assets/js/State.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Component.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Plugin.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Base.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Config.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Section/Menubar.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Section/Sidebar.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Section/PageAside.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Plugin/menu.min.js') }}"></script>
-  <!-- Config -->
-  <script src="{{ asset('ui/topbar/assets/js/config/colors.min.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/config/tour.min.js') }}"></script>
-  <script>
-  Config.set('assets', '{{ app.request.getBaseURL() }}/web/ui/topbar/assets');
-  </script>
-  <!-- Page -->
-  <script src="{{ asset('ui/topbar/assets/js/Site.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Plugin/asscrollable.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Plugin/slidepanel.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Plugin/switchery.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Plugin/jquery-placeholder.js') }}"></script>
-  <script src="{{ asset('ui/topbar/assets/js/Plugin/material.js') }}"></script>
-  <script>
-  (function(document, window, $) {
-    'use strict';
-    var Site = window.Site;
-    $(document).ready(function() {
-      Site.run();
-    });
-  })(document, window, jQuery);
-  </script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
+
 </html>

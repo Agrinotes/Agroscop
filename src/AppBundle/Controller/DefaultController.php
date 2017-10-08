@@ -16,4 +16,12 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->redirectToRoute('fos_user_registration_register');
     }
+
+    /**
+     * @Route("/cgu", name="cgu")
+     */
+    public function cguAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('cgu.html.twig');    }
 }
