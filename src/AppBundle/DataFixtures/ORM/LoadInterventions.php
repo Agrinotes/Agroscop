@@ -18,6 +18,8 @@ class LoadInterventions extends AbstractFixture implements OrderedFixtureInterfa
      */
     public function load(ObjectManager $manager)
     {
+      $manager->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
             array('Sous-solage','travail-du-sol'),
             array('Labour','travail-du-sol'),

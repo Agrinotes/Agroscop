@@ -17,6 +17,8 @@ class LoadFertilizers extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
+      $manager->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
             array("0 10 25", "engrais de fond", "granulé", "0", "10", "25", "22", "1", "", "", "", "", "", "", ""),
             array("0 32 16", "engrais de fond", "granulé", "0", "32", "16", "6,3", "", "", "", "", "", "", "", ""),

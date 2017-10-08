@@ -19,6 +19,8 @@ class LoadUnits extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
+        $manager->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
             array('surface_area','Acres','acre','4046.8564224','','','acre'),
             array('electric_current','Ampères','ampere','1','','','A'),

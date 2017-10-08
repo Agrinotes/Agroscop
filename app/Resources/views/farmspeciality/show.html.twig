@@ -150,7 +150,7 @@
                                 </td>
                                 <td>
                                     {% if farmSpecialityMvt.category.slug == "useAction" or farmSpecialityMvt.amount < 0 %}-{% endif %}
-                                    {{ farmSpecialityMvt.amount|abs|number_format(0,'',' ') }}
+                                    {{ farmSpecialityMvt.amount|abs|number_format(2,',',' ') }}
                                     {{ farmSpecialityMvt.unit.symbol }}
 
                                 </td>
@@ -178,7 +178,7 @@
                 <span class="counter-icon m-r-10 grey-300">
                   <i class="wb-stats-bars"></i>
                 </span>
-                            <span class="counter-number">{{ farmSpeciality.stock |number_format(0,'',' ') }}</span>
+                            <span class="counter-number">{{ farmSpeciality.stock |number_format(2,',',' ') }}</span>
                 <span class="counter-number-related">
                     {% if farmSpeciality.speciality.unitCategory.slug == 'mass'  %}kg{% elseif farmSpeciality.speciality.unitCategory.slug == 'volume' %}L{% else %} {{ farmSpeciality.speciality.unitCategory.symbol }} {% endif %}
 </span>

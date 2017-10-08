@@ -18,6 +18,8 @@ class LoadTractorModels extends AbstractFixture implements FixtureInterface, Ord
      */
     public function load(ObjectManager $em)
     {
+      $em->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $tractors =
             array(
                 array('AGCO',

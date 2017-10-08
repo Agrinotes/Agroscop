@@ -152,7 +152,7 @@
                                 </td>
                                 <td>
                                     {% if farmFertilizerMvt.category.slug == "useAction" or farmFertilizerMvt.amount < 0 %}-{% endif %}
-                                    {{ farmFertilizerMvt.amount|abs|number_format(0,'',' ') }}
+                                    {{ farmFertilizerMvt.amount|abs|number_format(2,',',' ') }}
                                     {{ farmFertilizerMvt.unit.symbol }}
 
                                 </td>
@@ -180,7 +180,7 @@
                 <span class="counter-icon m-r-10 grey-300">
                   <i class="wb-stats-bars"></i>
                 </span>
-                            <span class="counter-number">{{ farmFertilizer.stock |number_format(0,'',' ') }}</span>
+                            <span class="counter-number">{{ farmFertilizer.stock |number_format(2,',',' ') }}</span>
                 <span class="counter-number-related">                                    {% if farmFertilizer.fertilizer.formula == "liquide" %}L{% elseif farmFertilizer.fertilizer.formula is not empty %}kg{% else %}{% endif %}
 </span>
                         </div>

@@ -17,6 +17,8 @@ class LoadInsects extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
+      $manager->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
             array('Amblyseius californicus'),
             array('Amblyseius cucumeris'),

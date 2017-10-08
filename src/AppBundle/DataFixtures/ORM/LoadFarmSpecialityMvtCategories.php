@@ -18,6 +18,8 @@ class LoadFarmSpecialityMvtCategories extends AbstractFixture implements Fixture
      */
     public function load(ObjectManager $em)
     {
+      $em->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
             array('Nouvel achat de produit', 'buyAction'),
             array('Utilisation du produit', 'useAction'),

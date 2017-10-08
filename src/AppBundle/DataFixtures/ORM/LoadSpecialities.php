@@ -17,6 +17,8 @@ class LoadSpecialities extends AbstractFixture implements OrderedFixtureInterfac
      */
     public function load(ObjectManager $manager)
     {
+      $manager->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
           array("2150786","SHARPEN 33% EC","volume"),
         array("2150116","BELEM EV","mass"),

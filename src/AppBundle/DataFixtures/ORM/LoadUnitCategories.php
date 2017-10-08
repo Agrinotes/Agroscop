@@ -18,6 +18,8 @@ class LoadUnitCategories extends AbstractFixture implements FixtureInterface, Or
      */
     public function load(ObjectManager $em)
     {
+        $em->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
             array('Angle','angle','rad'),
             array('Aucune','none','.'),

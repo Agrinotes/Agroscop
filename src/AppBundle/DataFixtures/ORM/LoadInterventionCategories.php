@@ -18,6 +18,8 @@ class LoadInterventionCategories extends AbstractFixture implements FixtureInter
      */
     public function load(ObjectManager $em)
     {
+      $em->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
             array('Travail du sol', 'travail-du-sol'),
             array('Semis et plantation', 'semis-et-plantation'),

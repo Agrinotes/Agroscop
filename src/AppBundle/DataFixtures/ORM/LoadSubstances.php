@@ -18,6 +18,8 @@ class LoadSubstances extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
+      $manager->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
           array('9900298','1.000000','%','percent','','Alkyl benzene sulfonate de sodium','NULL'),
           array('9900298','2.000000','%','percent','','Alkyl sulfate de sodium','NULL'),

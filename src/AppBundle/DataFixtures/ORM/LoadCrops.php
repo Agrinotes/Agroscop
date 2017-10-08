@@ -17,6 +17,8 @@ class LoadCrops extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
+      $manager->getConnection()->getConfiguration()->setSQLLogger(null);
+
         $names = array(
             array('Abricot','#ff9800'),
             array('Ail','#9e9e9e'),
