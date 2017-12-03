@@ -203,13 +203,7 @@
                                 </div>
                             </div>
                         </li>
-                       {# <li class="site-menu-item pull-right">
-                            <a href="#">
-                                <span class="site-menu-title">Mes conseillers</span>
-                            </a>
-                        </li>
-                        #}
-                        <li class="dropdown site-menu-item has-sub pull-right">
+                        <li class="dropdown site-menu-item has-sub">
                             <a data-toggle="dropdown" href="javascript:void(0)" data-dropdown-toggle="false">
                                 <span class="site-menu-title">FICHES TECHNIQUES</span>
                                 <span class="site-menu-arrow"></span>
@@ -239,7 +233,18 @@
                                 </div>
                             </div>
                         </li>
+                       {# <li class="site-menu-item pull-right">
+                            <a href="#">
+                                <span class="site-menu-title">Mes conseillers</span>
+                            </a>
+                        </li>
+                        #}
 
+                        <li class="dropdown site-menu-item  pull-right">
+                            <a href="{{ path('cgu') }}">
+                                <span class="site-menu-title">CGU</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
